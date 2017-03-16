@@ -14,7 +14,9 @@ render((
 	<Route path="/" component={App}>
 
     	{/* localhost:8080/#/inbox load Inbox.js*/}
-    	<Route path="/inbox" component={Inbox}/>
+    	<Route path="/inbox" component={Inbox}>
+    		<Route path="inbox/:message" component={Inbox}/>
+    	</Route>
 		{/* localhost:8080/#/spam load Spam.js*/}
     	<Route path="/spam" component={Spam}/>
 
