@@ -10,12 +10,11 @@ import { Link } from 'react-router'
 // })
 
 export default React.createClass({
-  render() {
+  render(props) {
     return (
       <div>
         <h2>Spam</h2>
 
-        {/* add some links */}
         <ul>
           <li><Link to="/spam/message">Spam Title Goes Here</Link></li>
         </ul>

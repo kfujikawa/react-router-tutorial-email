@@ -5,12 +5,6 @@ import { Link } from 'react-router'
 
 // export default React.createClass({
 //   render() {
-//     return <div>This should show the titles of the Inbox emails as links</div>
-//   }
-// })
-
-// export default React.createClass({
-//   render() {
 //     return (
 //       <div>
 //         <h2>{this.props.params.emails}</h2>
@@ -21,15 +15,14 @@ import { Link } from 'react-router'
 
 export default React.createClass({
   render() {
+  	console.log(this.props.params);
     return (
       <div>
         <h2>Inbox</h2>
 
-        {/* add some links */}
         <ul>
           <li><Link to="/inbox/message">Inbox Title Goes Here</Link></li>
         </ul>
-
       </div>
     )
   }
