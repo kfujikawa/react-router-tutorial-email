@@ -7,7 +7,7 @@ export default React.createClass({
   render() {
     return (
     	<div>
-    		<h1>Email Inbox</h1>
+    		<h1>Emails</h1>
     		<ul role="nav">
     			<li><Link to="/inbox">Inbox</Link></li>
     			<li><Link to="/spam">Spam</Link></li>

@@ -3,27 +3,37 @@ import { Link } from 'react-router'
 
 /* Renders when localhost:8080/#/inbox is visited*/
 
-// export default React.createClass({
-//   render() {
-//     return (
-//       <div>
-//         <h2>{this.props.params.emails}</h2>
-//       </div>
-//     )
-//   }
-// })
+export default class Inbox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.emails = [
+            {
+                id: 0,
+                title: "Email 1",
+            },
+            {
+                id: 1,
+                title: "Email 2"
+            }
+        ]
+    }
+    render() {
 
-export default React.createClass({
-  render() {
-  	console.log(this.props.params);
-    return (
-      <div>
-        <h2>Inbox</h2>
+        const renderedEmails = this.emails.map((email, index) => {
+          return (
+              <div key={index}>
+                
+                <Link to={"/inbox/" + email.title}>{email.title}</Link>
+              </div>
+          )  
+        })
 
-        <ul>
-          <li><Link to="/inbox/message">Inbox Title Goes Here</Link></li>
-        </ul>
-      </div>
-    )
-  }
-})
+        return (
+            <div>
+                <h1>Inbox</h1>
+                {renderedEmails}
+                {this.props.children}
+            </div>
+        )
+    }
+}
